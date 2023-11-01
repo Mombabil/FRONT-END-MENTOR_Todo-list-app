@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+body {
+  font-size: 18px;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  height: 100vh;
+}
+
+main {
+  width: 1440px;
+  background: hsl(235, 21%, 11%);
+  height: 800px;
+  border-radius: 2px;
+}
+main header {
+  background: url("../images/bg-desktop-dark.jpg") center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main header h1 {
+  margin: 0;
+  width: 33%;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 98%);
+  font-weight: 700;
+  margin-bottom: 38px;
+  letter-spacing: 12px;
+  font-size: 2.3em;
+}
+main header h1 span {
+  cursor: pointer;
+}
+main header form {
+  width: 33%;
+  background: hsl(235, 24%, 19%);
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  border-radius: 5px;
+}
+main header form span {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 1px solid hsl(237, 14%, 26%);
+  border-radius: 26px;
+}
+main header form input {
+  border: none;
+  width: calc(90% - 42px);
+  background: transparent;
+  padding: 24px;
+  color: hsl(0, 0%, 98%);
+  font-size: 18px;
+  font-weight: 500;
+}
+main header form input::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+  color: hsl(234, 11%, 52%);
+}
+main header form input:focus {
+  outline: none;
+  caret-color: white;
+}
+main header .light-mode-form {
+  background: hsl(0, 0%, 98%);
+  transition: 0.2s ease-in-out;
+}
+main header .light-mode-form input {
+  color: hsl(235, 21%, 11%);
+}
+main .light-mode-header {
+  background: url("../images/bg-desktop-light.jpg") center/cover no-repeat;
+}
+main .todos {
+  min-height: 400px;
+  width: calc(33% + 24px);
+  margin: 0 auto;
+  background: hsl(235, 24%, 19%);
+  position: relative;
+  top: -50px;
+  border-radius: 5px;
+  box-shadow: 0px 18px 51px 23px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+main .todos .todos-list {
+  margin: 0;
+  min-height: 349px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+main .todos .todos-list li {
+  list-style-type: none;
+  width: calc(90% - 42px);
+  background: transparent;
+  padding: 18px 24px 9px 24px;
+  color: hsl(0, 0%, 98%);
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: grab;
+}
+main .todos .todos-list li span {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 1px solid hsl(237, 14%, 26%);
+  border-radius: 26px;
+  margin-right: 24px;
+}
+main .todos .todos-list .check span {
+  background: url("../images/icon-check.svg") center/contain no-repeat, linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-size: 50%;
+  background-color: linear-gradient hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+}
+main .todos .todos-list li:nth-of-type(1n+7) {
+  display: none;
+}
+main .todos .todos-list .hide {
+  display: none;
+}
+main .todos .settings {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid hsl(237, 14%, 26%);
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  padding: 0;
+}
+main .todos .settings p {
+  padding: 0px;
+  margin: 0;
+  color: hsl(234, 11%, 52%);
+  text-align: center;
+}
+main .todos .settings p:hover {
+  color: hsl(220, 98%, 61%);
+  cursor: pointer;
+}
+main .todos .settings p:nth-child(1) {
+  text-align: left;
+  padding-left: 24px;
+}
+main .todos .settings p:nth-child(5) {
+  text-align: right;
+  padding-right: 24px;
+}
+main .todos .settings p:nth-child(2), main .todos .settings p:nth-child(3), main .todos .settings p:nth-child(4) {
+  width: 18%;
+}
+main .light-mode-todos {
+  background: hsl(0, 0%, 98%);
+  transition: 0.2s ease-in-out;
+}
+main .light-mode-todos .todos-list li {
+  color: hsl(235, 21%, 11%);
+}
+main p {
+  color: hsl(234, 11%, 52%);
+  text-align: center;
+  width: calc(33% + 24px);
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 375px) {
+  main {
+    width: 375px;
+  }
+  main header {
+    background: url("../images/bg-mobile-dark.jpg") center/cover no-repeat;
+  }
+  main header h1, main header form {
+    width: 80%;
+  }
+  main .light-mode-header {
+    background: url("../images/bg-mobile-light.jpg") center/cover no-repeat;
+  }
+  main .todos {
+    width: calc(80% + 24px);
+  }
+  main .todos .todos-list li {
+    font-size: 14px;
+  }
+  main .todos .settings {
+    font-size: 10px;
+  }
+  main .light-mode-todos {
+    background: hsl(0, 0%, 98%);
+    transition: 0.2s ease-in-out;
+  }
+}
+.light-mode-main {
+  background: hsl(0, 0%, 98%);
+  transition: 0.2s ease-in-out;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 10px;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

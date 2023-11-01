@@ -1,0 +1,214 @@
+@import './settings';
+
+main{
+    width: 1440px;
+    background: $veryDarkBlue;
+    height: 800px;
+    border-radius: 2px;
+    header{
+        background: url('../images/bg-desktop-dark.jpg') center/cover no-repeat;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h1{
+            margin: 0;
+            width: 33%;
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            color: $veryLightGray;
+            font-weight: 700;
+            margin-bottom: 38px;
+            letter-spacing: 12px;
+            font-size: 2.3em;
+            span{
+                cursor: pointer;
+            }
+        }
+        form{
+            width: 33%;
+            background: $veryDarkDesaturedBlue;
+            display: flex;
+            align-items: center;
+            padding-left: 24px;
+            border-radius: 5px;
+            span{
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                border: 1px solid $veryDarkGrayishBlueDarkTheme2;
+                border-radius: 26px;
+            }
+            input{
+                border: none;
+                width: calc(90% - 42px);
+                background: transparent;
+                padding: 24px;
+                color: $veryLightGray;
+                font-size: 18px;
+                font-weight: 500;
+                &::placeholder{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $darkGrayishBlueDarkTheme;
+                }
+                &:focus{
+                    outline: none;
+                    caret-color: white;
+                }
+            }
+        }
+        .light-mode-form{
+            background: $veryLightGray;
+            transition: 0.2s ease-in-out;
+            input{
+                color: $veryDarkBlue;
+            }
+        }
+    }
+    .light-mode-header{
+        background: url("../images/bg-desktop-light.jpg") center/cover no-repeat;
+    }
+    .todos{
+        min-height: 400px;
+        width: calc(33% + 24px);
+        margin: 0 auto;
+        background: $veryDarkDesaturedBlue;
+        position: relative;
+        top: -50px;
+        border-radius: 5px;
+        box-shadow: 0px 18px 51px 23px #00000033;
+        position: relative;
+        .todos-list{
+            margin: 0;
+            min-height: 349px;
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            li{
+                list-style-type: none;
+                width: calc(90% - 42px);
+                background: transparent;
+                padding: 18px 24px 9px 24px;
+                color: $veryLightGray;
+                font-size: 18px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                cursor: grab;
+                span{
+                    display: inline-block;
+                    width: 26px;
+                    height: 26px;
+                    border: 1px solid $veryDarkGrayishBlueDarkTheme2;
+                    border-radius: 26px;
+                    margin-right: 24px;
+                }
+            }
+            .check{
+                span{
+                    background: url("../images/icon-check.svg") center/contain no-repeat, linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+                    background-size: 50%;
+                    background-color: linear-gradient hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+                }
+            }
+            // affiche seulement les 6 premiers
+            li:nth-of-type(1n+7) {
+                display: none;
+            }
+            .hide{
+                display: none;
+            } 
+        }
+        .settings{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 0;
+            border-top: 1px solid $veryDarkGrayishBlueDarkTheme2;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+            padding: 0;
+            p{
+                padding: 0px;
+                margin: 0;
+                color: $darkGrayishBlueDarkTheme;
+                text-align: center;
+                &:hover{
+                    color:$brightBlue;
+                    cursor: pointer;
+                }
+                &:nth-child(1){
+                    text-align: left;
+                    padding-left: 24px;
+                }
+                &:nth-child(5){
+                    text-align: right;
+                    padding-right: 24px;
+                }
+                &:nth-child(2), &:nth-child(3), &:nth-child(4){
+                    width: 18%;
+                }
+            }
+        }
+    }
+    .light-mode-todos{
+        background: $veryLightGray;
+        transition: 0.2s ease-in-out;
+        .todos-list{
+            li{
+                color: $veryDarkBlue;
+            }
+        }
+    }
+    p{
+        color: $darkGrayishBlueDarkTheme;
+        text-align: center;
+        width: calc(33% + 24px);
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 375px) {
+    main{
+        width: 375px;
+        header{
+            background: url('../images/bg-mobile-dark.jpg') center/cover no-repeat;
+            h1, form{
+                width: 80%;
+            }
+        }
+        .light-mode-header{
+            background: url("../images/bg-mobile-light.jpg") center/cover no-repeat;
+        }
+        .todos{
+            width: calc(80% + 24px);
+            .todos-list{
+                li{
+                    font-size: 14px;
+                }
+            }
+            .settings{
+                font-size: 10px;
+            }
+        }
+        .light-mode-todos{
+            background: $veryLightGray;
+            transition: 0.2s ease-in-out;
+        }
+    }
+}
+.light-mode-main{
+    background: $veryLightGray;
+    transition: 0.2s ease-in-out;
+}
+.attribution{
+    position: fixed;
+    bottom: 10px;
+    color: white;
+}
